@@ -3,29 +3,28 @@ using namespace std;
 
 // Better solution is using next_permutation in cpp STL which is also the one below
 
-vector<int> optimal(vector<int> arr)
-{
+// from the end of the array
+// find array index i such that arr[i] < arr[i+1]
+// find array index j such that arr[j] > arr[i]
+// swap arr[i] and arr[j]
+// reverse the array from i+1 to end
+vector<int> optimal(vector<int> arr) {
     int n = arr.size();
     int index = -1;
-    for (int i = n - 2; i >= 0; i--)
-    {
-        if (arr[i] < arr[i + 1])
-        {
+    for (int i = n - 2; i >= 0; i--) {
+        if (arr[i] < arr[i + 1]) {
             index = i;
             break;
         }
     }
 
-    if (index == -1)
-    {
+    if (index == -1) {
         reverse(arr.begin(), arr.end());
         return arr;
     }
 
-    for (int i = n - 1; i > index; i--)
-    {
-        if (arr[i] > arr[index])
-        {
+    for (int i = n - 1; i > index; i--) {
+        if (arr[i] > arr[index]) {
             swap(arr[i], arr[index]);
             break;
         }
@@ -34,7 +33,6 @@ vector<int> optimal(vector<int> arr)
     return arr;
 }
 
-int main()
-{
+int main() {
     vector<int> arr = {2, 1, 5, 4, 3, 0, 0};
 }
