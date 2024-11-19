@@ -16,13 +16,12 @@ void solve(vector<int> &arr) {
         } else {
             swap(arr[high], arr[mid]);
             high--;
-            mid++;
         }
     }
 }
 
 int main() {
-    vector<int> arr = {2, 0, 2, 1, 1, 0};
+    vector<int> arr = {1, 2, 0};
 
     solve(arr);
 

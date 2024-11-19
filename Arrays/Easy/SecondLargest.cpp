@@ -18,6 +18,6 @@ int secondLargest(int arr[], int n) {
 
 int main() {
     int arr[] = {1, 2, 4, 7, 7, 5};
-    int n = size(arr);
+    int n = sizeof(arr) / sizeof(arr[0]);
     cout << secondLargest(arr, n);
 }
