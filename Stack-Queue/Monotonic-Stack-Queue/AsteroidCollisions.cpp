@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 vector<int> optimal(vector<int> arr) {
@@ -8,7 +9,8 @@ vector<int> optimal(vector<int> arr) {
         if (arr[i] > 0) {
             ans.push_back(arr[i]);
         } else {
-            while (!ans.empty() && ans.back() > 0 && (ans.back() < abs(arr[i]))) {
+            while (!ans.empty() && ans.back() > 0 &&
+                   (ans.back() < abs(arr[i]))) {
                 ans.pop_back();
             }
             if (!ans.empty() && ans.back() == abs(arr[i])) {

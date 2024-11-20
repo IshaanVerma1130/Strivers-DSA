@@ -1,4 +1,6 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <numeric>
+#include <vector>
 using namespace std;
 
 int fun(vector<int> arr, int capacity) {

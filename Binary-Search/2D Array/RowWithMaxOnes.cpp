@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 int brute(vector<vector<int>> mat) {
@@ -58,8 +59,7 @@ int optimal(vector<vector<int>> mat) {
 }
 
 int main() {
-    vector<vector<int>> matrix = {
-        {0}, {0}};
+    vector<vector<int>> matrix = {{0}, {0}};
     cout << brute(matrix) << endl;
     cout << optimal(matrix) << endl;
 }

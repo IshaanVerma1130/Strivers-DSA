@@ -1,18 +1,19 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 class Node {
-public:
+   public:
     int data;
     Node *next;
 
-public:
+   public:
     Node(int data1, Node *next1) {
         data = data1;
         next = next1;
     }
 
-public:
+   public:
     Node(int data1) {
         data = data1;
         next = nullptr;
@@ -55,16 +56,14 @@ int checkIfPresent(Node *head, int val) {
     Node *temp = head;
 
     while (temp != nullptr) {
-        if (temp->data == val)
-            return 1;
+        if (temp->data == val) return 1;
         temp = temp->next;
     }
     return 0;
 }
 
 Node *removeHead(Node *head) {
-    if (head == nullptr)
-        return head;
+    if (head == nullptr) return head;
     Node *temp = head;
     head = head->next;
     free(temp);
@@ -72,10 +71,8 @@ Node *removeHead(Node *head) {
 }
 
 Node *removeTail(Node *head) {
-    if (head == nullptr)
-        return head;
-    if (head->next == nullptr)
-        return nullptr;
+    if (head == nullptr) return head;
+    if (head->next == nullptr) return nullptr;
 
     Node *temp = head;
 
@@ -89,8 +86,7 @@ Node *removeTail(Node *head) {
 }
 
 Node *removeKth(Node *head, int k) {
-    if (head == nullptr)
-        return head;
+    if (head == nullptr) return head;
     if (k == 1) {
         Node *temp = head;
         head = head->next;
@@ -115,8 +111,7 @@ Node *removeKth(Node *head, int k) {
 }
 
 Node *removeEl(Node *head, int val) {
-    if (head == nullptr)
-        return head;
+    if (head == nullptr) return head;
     if (head->data == val) {
         Node *temp = head;
         head = head->next;
@@ -138,13 +133,10 @@ Node *removeEl(Node *head, int val) {
     return head;
 }
 
-Node *insertHead(Node *head, int val) {
-    return new Node(val, head);
-}
+Node *insertHead(Node *head, int val) { return new Node(val, head); }
 
 Node *insertTail(Node *head, int val) {
-    if (head == nullptr)
-        return new Node(val);
+    if (head == nullptr) return new Node(val);
     Node *temp = head;
     while (temp->next != nullptr) {
         temp = temp->next;
@@ -155,13 +147,11 @@ Node *insertTail(Node *head, int val) {
 
 Node *insertKth(Node *head, int val, int k) {
     if (head == nullptr) {
-        if (k == 1)
-            return new Node(val);
+        if (k == 1) return new Node(val);
         return head;
     }
 
-    if (k == 1)
-        return new Node(val, head);
+    if (k == 1) return new Node(val, head);
 
     Node *temp = head;
     int count = 0;
@@ -183,8 +173,7 @@ Node *insertBeforeVal(Node *head, int newVal, int val) {
         return head;
     }
 
-    if (head->data == val)
-        return new Node(newVal, head);
+    if (head->data == val) return new Node(newVal, head);
 
     Node *temp = head;
     int count = 0;

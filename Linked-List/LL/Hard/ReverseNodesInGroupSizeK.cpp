@@ -1,8 +1,9 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 class Node {
-public:
+   public:
     int data;
 
     Node *next;
@@ -62,7 +63,6 @@ Node *optimal(Node *head, int k) {
         if (temp == head) {
             head = kthNode;
         } else {
-
             prevNode->next = kthNode;
         }
         prevNode = temp;

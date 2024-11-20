@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 int upperBound(vector<int> &arr, int x, int n) {
@@ -13,7 +14,7 @@ int upperBound(vector<int> &arr, int x, int n) {
             // look for smaller index on the left
             high = mid - 1;
         } else {
-            low = mid + 1; // look on the right
+            low = mid + 1;  // look on the right
         }
     }
     return ans;
@@ -50,9 +51,7 @@ int optimal(vector<vector<int>> &matrix, int m, int n) {
 
 int main() {
     vector<vector<int>> matrix = {
-        {1, 2, 3, 4, 5},
-        {8, 9, 11, 12, 13},
-        {21, 23, 25, 27, 29}};
+        {1, 2, 3, 4, 5}, {8, 9, 11, 12, 13}, {21, 23, 25, 27, 29}};
     int m = matrix.size(), n = matrix[0].size();
     int ans = optimal(matrix, m, n);
     cout << "The median element is: " << ans << endl;

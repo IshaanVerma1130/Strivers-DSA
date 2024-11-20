@@ -1,9 +1,10 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 vector<int> brute(vector<int> arr) {
     vector<int> ls;
 
-    for (int i = 0; i < arr.size(); i++) { // O(n^2)
+    for (int i = 0; i < arr.size(); i++) {  // O(n^2)
         if (ls.size() == 0 || ls[0] != arr[i]) {
             int count = 0;
             for (int j = 0; j < arr.size(); j++) {
@@ -23,7 +24,7 @@ vector<int> brute(vector<int> arr) {
     return ls;
 }
 
-vector<int> better(vector<int> arr) { // O(n) * O(1) in best case unordered map
+vector<int> better(vector<int> arr) {  // O(n) * O(1) in best case unordered map
     unordered_map<int, int> mp;
     vector<int> ls;
     for (int i = 0; i < arr.size(); i++) {

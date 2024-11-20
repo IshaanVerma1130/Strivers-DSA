@@ -1,8 +1,10 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 // Brute Force - 3 loops all subarrays O(n^3)
-// Better - Kepp the result of multiplication of all elements till now and keep track of max and min O(n^2)
+// Better - Kepp the result of multiplication of all elements till now and keep
+// track of max and min O(n^2)
 
 long long optimal(vector<int> arr) {
     long long maxProd = INT_MIN;
@@ -15,10 +17,8 @@ long long optimal(vector<int> arr) {
         suffixProd *= arr[arr.size() - i - 1];
 
         maxProd = max(maxProd, max(prefixProd, suffixProd));
-        if (prefixProd == 0)
-            prefixProd = 1;
-        if (suffixProd == 0)
-            suffixProd = 1;
+        if (prefixProd == 0) prefixProd = 1;
+        if (suffixProd == 0) suffixProd = 1;
     }
     return maxProd;
 }

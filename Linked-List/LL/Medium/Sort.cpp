@@ -1,7 +1,8 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 class Node {
-public:
+   public:
     int data;
 
     Node *next;

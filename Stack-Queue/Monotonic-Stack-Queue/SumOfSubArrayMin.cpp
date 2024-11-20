@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 vector<int> prevSmallerOrEqual(vector<int> arr) {
@@ -37,8 +38,7 @@ vector<int> nextSmaller(vector<int> arr) {
     return ans;
 }
 
-long long
-optimal(vector<int> arr) {
+long long optimal(vector<int> arr) {
     vector<int> prev = prevSmallerOrEqual(arr);
     vector<int> next = nextSmaller(arr);
 

@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 int main() {
@@ -15,5 +15,5 @@ int main() {
             count = 0;
     }
 
-    cout << maxOne;
+    cout << maxOne <<endl;
 }

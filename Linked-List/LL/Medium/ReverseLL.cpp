@@ -1,12 +1,12 @@
 
 
-#include <bits/stdc++.h>
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
 class Node {
-public:
+   public:
     int data;
 
     Node *next;
@@ -23,10 +23,8 @@ public:
 };
 
 Node *iterative(Node *head) {
-    if (head == nullptr)
-        return nullptr;
-    if (head->next == nullptr)
-        return head;
+    if (head == nullptr) return nullptr;
+    if (head->next == nullptr) return head;
 
     Node *prev = nullptr;
     Node *current = head;
@@ -41,8 +39,7 @@ Node *iterative(Node *head) {
 }
 
 Node *recursive(Node *head) {
-    if (head == nullptr || head->next == nullptr)
-        return head;
+    if (head == nullptr || head->next == nullptr) return head;
     Node *newHead = recursive(head->next);
     Node *front = head->next;
     front->next = head;
@@ -79,7 +76,7 @@ int main() {
     cout << "Reversed Linked List: ";
     printLinkedList(head);
 
-    head = recursive(head); // Print the reversed linked list
+    head = recursive(head);  // Print the reversed linked list
     cout << "Reversed Linked List: ";
     printLinkedList(head);
 

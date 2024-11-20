@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 // contains duplicates
@@ -8,8 +9,7 @@ int optimal(vector<int> arr, int target) {
     while (low <= high) {
         int mid = low + (high - low) / 2;
 
-        if (arr[mid] == target)
-            return mid;
+        if (arr[mid] == target) return mid;
 
         if (arr[mid] == arr[low] && arr[mid] == arr[high]) {
             low++;
@@ -17,13 +17,14 @@ int optimal(vector<int> arr, int target) {
             continue;
         }
 
-        if (arr[mid] >= arr[0]) { // We are in the left half
+        if (arr[mid] >= arr[0]) {  // We are in the left half
             if (target <= arr[mid] && target >= arr[low]) {
                 high = mid - 1;
             } else {
                 low = mid + 1;
             }
-        } else if (arr[mid] <= arr[arr.size() - 1]) { // We are in the right half
+        } else if (arr[mid] <=
+                   arr[arr.size() - 1]) {  // We are in the right half
             if (target <= arr[high] && target >= arr[mid]) {
                 low = mid + 1;
             } else {

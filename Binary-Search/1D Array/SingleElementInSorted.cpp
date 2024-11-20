@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 int optimal(vector<int> arr) {
@@ -18,7 +19,8 @@ int optimal(vector<int> arr) {
         if (arr[mid] != arr[mid - 1] && arr[mid] != arr[mid + 1]) {
             return arr[mid];
         }
-        if (mid % 2 == 1 && arr[mid] == arr[mid - 1] || mid % 2 == 0 && arr[mid] == arr[mid + 1]) {
+        if (mid % 2 == 1 && arr[mid] == arr[mid - 1] ||
+            mid % 2 == 0 && arr[mid] == arr[mid + 1]) {
             low = mid + 1;
         } else {
             high = mid - 1;
@@ -29,5 +31,5 @@ int optimal(vector<int> arr) {
 
 int main() {
     vector<int> arr = {1, 1, 2, 2, 3, 3, 4, 4, 5, 6, 6};
-    cout << optimal(arr) << endl; // 5
+    cout << optimal(arr) << endl;  // 5
 }

@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 vector<int> prevSmallerOrEqual(vector<int> arr) {
     vector<int> ans(arr.size(), -1);
@@ -36,8 +37,7 @@ vector<int> nextSmaller(vector<int> arr) {
     return ans;
 }
 
-long long
-smallerSum(vector<int> arr) {
+long long smallerSum(vector<int> arr) {
     vector<int> prev = prevSmallerOrEqual(arr);
     vector<int> next = nextSmaller(arr);
 
@@ -86,8 +86,7 @@ vector<int> prevLargerOrEqual(vector<int> arr) {
     return ans;
 }
 
-long long
-largerSum(vector<int> arr) {
+long long largerSum(vector<int> arr) {
     vector<int> prev = prevLargerOrEqual(arr);
     vector<int> next = nextLarger(arr);
 
@@ -99,6 +98,4 @@ largerSum(vector<int> arr) {
     }
     return ans;
 }
-long long optimal(vector<int> arr) {
-    return largerSum(arr) - smallerSum(arr);
-}
+long long optimal(vector<int> arr) { return largerSum(arr) - smallerSum(arr); }

@@ -1,20 +1,21 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 class Node {
-public:
+   public:
     int data;
     Node *next;
     Node *back;
 
-public:
+   public:
     Node(int data1) {
         data = data1;
         next = nullptr;
         back = nullptr;
     }
 
-public:
+   public:
     Node(int data1, Node *back1, Node *next1) {
         data = data1;
         next = next1;
@@ -32,8 +33,7 @@ Node *optimal(Node *head) {
             delete duplicate;
         }
         temp->next = nextNode;
-        if (nextNode != nullptr)
-            nextNode->back = temp;
+        if (nextNode != nullptr) nextNode->back = temp;
         temp = temp->next;
     }
     return head;

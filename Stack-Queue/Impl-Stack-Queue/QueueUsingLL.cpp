@@ -1,8 +1,9 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 class Node {
-public:
+   public:
     int data;
     Node *next;
     Node(int data) {
@@ -15,7 +16,7 @@ class Queue {
     Node *head, *tail;
     int size = 0;
 
-public:
+   public:
     void push(int x) {
         Node *temp = new Node(x);
         if (head == nullptr) {
@@ -46,7 +47,5 @@ public:
         return head->data;
     }
 
-    int size() {
-        return size;
-    }
+    int size() { return size; }
 };

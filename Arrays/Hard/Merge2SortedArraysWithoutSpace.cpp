@@ -1,7 +1,9 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
-void optimal1(vector<int> &arr1, vector<int> &arr2, int n, int m) { // O(min(n, m) + nlogn + mlogm)
+void optimal1(vector<int> &arr1, vector<int> &arr2, int n,
+              int m) {  // O(min(n, m) + nlogn + mlogm)
     int left = n - 1;
     int right = 0;
 
@@ -24,7 +26,8 @@ void swap(vector<int> &arr1, vector<int> &arr2, int ind1, int ind2) {
         swap(arr1[ind1], arr2[ind2]);
     }
 }
-void optimal2(vector<int> &arr1, vector<int> &arr2, int n, int m) { // O(log(n+m)) x O(n+m)
+void optimal2(vector<int> &arr1, vector<int> &arr2, int n,
+              int m) {  // O(log(n+m)) x O(n+m)
     int len = n + m;
     int gap = (len / 2) + (len % 2);
 
@@ -42,8 +45,7 @@ void optimal2(vector<int> &arr1, vector<int> &arr2, int n, int m) { // O(log(n+m
             left++;
             right++;
         }
-        if (gap == 1)
-            break;
+        if (gap == 1) break;
         gap = (gap / 2) + (gap % 2);
     }
 }

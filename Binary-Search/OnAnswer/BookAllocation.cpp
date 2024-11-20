@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 // Same as painters partioning
 int fun(vector<int> arr, int pages) {

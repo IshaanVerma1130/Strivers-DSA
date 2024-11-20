@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 int optimal(vector<int> arr, int target) {
@@ -12,7 +13,8 @@ int optimal(vector<int> arr, int target) {
             return mid;
         }
 
-        // check for sorted half first as then we can compare if target lies in that range
+        // check for sorted half first as then we can compare if target lies in
+        // that range
         if (arr[mid] >= arr[0]) {
             if (target <= arr[mid] && target >= arr[low]) {
                 high = mid - 1;

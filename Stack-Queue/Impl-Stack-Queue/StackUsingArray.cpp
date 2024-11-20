@@ -1,11 +1,12 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 class Stack {
     int arr[10];
     int top = -1;
 
-public:
+   public:
     void push(int x) {
         if (top >= 10) {
             cout << "Stack Overflow" << endl;
@@ -28,7 +29,5 @@ public:
         }
         top -= 1;
     }
-    int size() {
-        return top + 1;
-    }
+    int size() { return top + 1; }
 };

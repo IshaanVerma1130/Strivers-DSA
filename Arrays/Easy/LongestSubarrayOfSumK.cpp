@@ -1,4 +1,6 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <map>
 using namespace std;
 
 int better(vector<int> arr, long long k) { // this is optimal for negatives
@@ -60,4 +62,5 @@ int main() {
 
     cout << better(arr, k) << endl;
     cout << optimal(arr, k);
+    cout << endl;
 }

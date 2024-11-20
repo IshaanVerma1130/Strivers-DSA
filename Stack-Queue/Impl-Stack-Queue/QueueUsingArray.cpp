@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 class Queue {
@@ -7,7 +8,7 @@ class Queue {
     int end = -1;
     int size = 0;
 
-public:
+   public:
     void push(int x) {
         if (size == 10) {
             cout << "Queue Overflow" << endl;
@@ -47,7 +48,5 @@ public:
         }
         return arr[start];
     }
-    int size() {
-        return size;
-    }
+    int size() { return size; }
 };

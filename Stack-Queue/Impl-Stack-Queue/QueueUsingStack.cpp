@@ -1,11 +1,12 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 class QueueBrute {
     stack<int> s1;
     stack<int> s2;
 
-public:
+   public:
     void push(int x) {
         while (!s1.empty()) {
             s2.push(s1.top());
@@ -18,23 +19,17 @@ public:
         }
     }
 
-    int top() {
-        s1.top();
-    }
+    int top() { s1.top(); }
 
-    void pop() {
-        s1.pop();
-    }
+    void pop() { s1.pop(); }
 };
 
 class QueueOptimized {
     stack<int> s1;
     stack<int> s2;
 
-public:
-    void push(int x) {
-        s1.push(x);
-    }
+   public:
+    void push(int x) { s1.push(x); }
 
     int top() {
         if (s2.empty()) {

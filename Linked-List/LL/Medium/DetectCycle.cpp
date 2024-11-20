@@ -1,20 +1,20 @@
 
 #include <iostream>
-#include <bits/stdc++.h>
+#include <vector>
 
 using namespace std;
 
 // Node class represents a
 // node in a linked list
 class Node {
-public:
+   public:
     // Data stored in the node
-    int data;        
-    
-    // Pointer to the next node in the list
-    Node* next;      
+    int data;
 
-    // Constructor with both data 
+    // Pointer to the next node in the list
+    Node* next;
+
+    // Constructor with both data
     // and next node as parameters
     Node(int data1, Node* next1) {
         data = data1;
@@ -56,11 +56,10 @@ bool detectCycle(Node* head) {
     return false;
 }
 
-
 int main() {
     // Create a sample linked list
     // with a loop for testing
-    
+
     Node* head = new Node(1);
     Node* second = new Node(2);
     Node* third = new Node(3);
@@ -71,10 +70,10 @@ int main() {
     second->next = third;
     third->next = fourth;
     fourth->next = fifth;
-     // Create a loop
-    fifth->next = third; 
+    // Create a loop
+    fifth->next = third;
 
-    // Check if there is a loop 
+    // Check if there is a loop
     // n the linked list
     if (detectCycle(head)) {
         cout << "Loop detected in the linked list." << endl;
@@ -91,4 +90,3 @@ int main() {
 
     return 0;
 }
-

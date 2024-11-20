@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 int fun(vector<int> arr, int day, int adj) {
@@ -21,7 +22,8 @@ int optimal(vector<int> arr, int numB, int adj) {
     if (numB > n / adj) {
         return -1;
     }
-    int low = *min_element(arr.begin(), arr.end()), high = *max_element(arr.begin(), arr.end());
+    int low = *min_element(arr.begin(), arr.end()),
+        high = *max_element(arr.begin(), arr.end());
     int ans = high;
 
     while (low <= high) {
@@ -41,5 +43,5 @@ int optimal(vector<int> arr, int numB, int adj) {
 int main() {
     vector<int> arr = {7, 7, 7, 7, 13, 11, 12, 7};
     int numB = 2, adj = 3;
-    cout << optimal(arr, numB, adj) << endl; // 3
+    cout << optimal(arr, numB, adj) << endl;  // 3
 }

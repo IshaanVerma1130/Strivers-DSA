@@ -1,5 +1,6 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include <iostream>
+#include <vector>#include <iostream>
+#include <vector>using namespace std;
 
 int optimal(vector<int> &arr, int target) {
     int low = 0;
@@ -8,8 +9,7 @@ int optimal(vector<int> &arr, int target) {
     while (low <= high) {
         int mid = low + (high - low) / 2;
 
-        if (arr[mid] == target)
-            return mid;
+        if (arr[mid] == target) return mid;
         if (arr[mid] < target) {
             low = mid + 1;
         } else {

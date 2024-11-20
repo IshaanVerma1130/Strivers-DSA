@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 vector<int> brute(vector<int> arr) {
@@ -13,10 +14,8 @@ vector<int> brute(vector<int> arr) {
                 count++;
             }
         }
-        if (count == 0)
-            missing = i;
-        if (count == 2)
-            repeating = i;
+        if (count == 0) missing = i;
+        if (count == 2) repeating = i;
         if (repeating != -1 && missing != -1) {
             break;
         }

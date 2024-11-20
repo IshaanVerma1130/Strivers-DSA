@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 int brute(vector<int> arr, int givenSum) {
@@ -13,8 +14,7 @@ int brute(vector<int> arr, int givenSum) {
                 sum += arr[k];
             }
 
-            if (sum == givenSum)
-                count++;
+            if (sum == givenSum) count++;
         }
     }
 
@@ -29,8 +29,7 @@ int better(vector<int> arr, int givenSum) {
         for (int j = i; j < n; j++) {
             sum += arr[j];
 
-            if (sum == givenSum)
-                count++;
+            if (sum == givenSum) count++;
         }
     }
 

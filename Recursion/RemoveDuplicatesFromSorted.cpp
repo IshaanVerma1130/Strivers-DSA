@@ -1,9 +1,10 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 int main() {
     int arr[] = {1, 1, 2, 2, 3, 3};
-    int n = size(arr);
+    int n = sizeof(arr) / sizeof(arr[0]);
     int i = 0;
 
     for (int j = 1; j < n; j++) {

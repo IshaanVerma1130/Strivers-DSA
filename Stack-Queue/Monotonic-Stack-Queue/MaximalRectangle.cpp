@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 int largestAreaInHistorgam(vector<int> arr) {
@@ -57,10 +58,7 @@ int optimal(vector<vector<int>> arr) {
 
 int main() {
     vector<vector<int>> arr = {
-        {1, 0, 1, 0, 0},
-        {1, 0, 1, 1, 1},
-        {1, 1, 1, 1, 1},
-        {1, 0, 0, 1, 0}};
+        {1, 0, 1, 0, 0}, {1, 0, 1, 1, 1}, {1, 1, 1, 1, 1}, {1, 0, 0, 1, 0}};
 
     cout << optimal(arr);
 }

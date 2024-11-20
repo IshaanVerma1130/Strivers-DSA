@@ -1,12 +1,12 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 bool solve(string &str, int i) {
     if (i >= str.size() / 2) {
         return true;
     }
-    if (str[i] != str[str.size() - 1 - i])
-        return false;
+    if (str[i] != str[str.size() - 1 - i]) return false;
     return solve(str, i + 1);
 }
 

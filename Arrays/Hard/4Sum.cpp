@@ -1,6 +1,11 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <map>
+#include <set>
+#include <vector>
 using namespace std;
-vector<vector<int>> brute(vector<int> arr, int target) { // O(n^4 * log(unique triplets)) // O(2*number of triplets)
+vector<vector<int>> brute(
+    vector<int> arr,
+    int target) {  // O(n^4 * log(unique triplets)) // O(2*number of triplets)
     int n = arr.size();
     set<vector<int>> s;
 
@@ -24,7 +29,9 @@ vector<vector<int>> brute(vector<int> arr, int target) { // O(n^4 * log(unique t
     return ans;
 }
 
-vector<vector<int>> better(vector<int> arr, int target) { // O(n^3 * log(unique tiplets)) // O(2*number of triplets)
+vector<vector<int>> better(
+    vector<int> arr,
+    int target) {  // O(n^3 * log(unique tiplets)) // O(2*number of triplets)
     int n = arr.size();
     set<vector<int>> s;
 
@@ -48,18 +55,16 @@ vector<vector<int>> better(vector<int> arr, int target) { // O(n^3 * log(unique 
     return ans;
 }
 
-vector<vector<int>> optimal(vector<int> arr, int target) { // O(nlongn + n^2*n)
+vector<vector<int>> optimal(vector<int> arr, int target) {  // O(nlongn + n^2*n)
     int n = arr.size();
     vector<vector<int>> ans;
 
     sort(arr.begin(), arr.end());
 
     for (int i = 0; i < n; i++) {
-        if (i > 0 && arr[i] == arr[i - 1])
-            continue;
+        if (i > 0 && arr[i] == arr[i - 1]) continue;
         for (int j = i + 1; j < n; j++) {
-            if (j > i + 1 && arr[j] == arr[j - 1])
-                continue;
+            if (j > i + 1 && arr[j] == arr[j - 1]) continue;
             int k = j + 1;
             int l = n - 1;
 
@@ -78,10 +83,8 @@ vector<vector<int>> optimal(vector<int> arr, int target) { // O(nlongn + n^2*n)
                     k++;
                     l--;
 
-                    while (k < l && arr[k] == arr[k - 1])
-                        k++;
-                    while (k < l && arr[l] == arr[l + 1])
-                        l--;
+                    while (k < l && arr[k] == arr[k - 1]) k++;
+                    while (k < l && arr[l] == arr[l + 1]) l--;
                 }
             }
         }

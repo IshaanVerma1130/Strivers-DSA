@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <vector>
+#include <iostream>
 using namespace std;
 
 vector<int> Union(vector<int> a, vector<int> b) {

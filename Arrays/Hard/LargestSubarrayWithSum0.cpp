@@ -1,8 +1,10 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 // brute - generate all subarrays and check if sum is 0 O(n^3)
-// better - Kadane's algo for sum 0 O(n^2). Dont generate but take the sum as you go.
+// better - Kadane's algo for sum 0 O(n^2). Dont generate but take the sum as
+// you go.
 
 int optimal(vector<int> arr) {
     unordered_map<int, int> mp;

@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 // Brute: Generate all subarrays and check if XOR is equal to k O(n^3)
@@ -17,9 +18,9 @@ int optimal(vector<int> arr, int k) {
 
         int x = xorSum ^ k;
 
-        if (mp.find(x) != mp.end()) { //
-            count += mp[x];           // Could also be written as just count += mp[x];
-        } //
+        if (mp.find(x) != mp.end()) {  //
+            count += mp[x];  // Could also be written as just count += mp[x];
+        }  //
         mp[xorSum]++;
     }
 

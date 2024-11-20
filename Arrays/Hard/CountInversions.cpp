@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 int brute(vector<int> arr) {
@@ -44,17 +45,14 @@ int merge(vector<int> &arr, int low, int mid, int high) {
 }
 int mS(vector<int> &arr, int low, int high) {
     int count = 0;
-    if (low >= high)
-        return count;
+    if (low >= high) return count;
     int mid = (low + high) / 2;
     count += mS(arr, low, mid);
     count += mS(arr, mid + 1, high);
     count += merge(arr, low, mid, high);
     return count;
 }
-int optimal(vector<int> arr, int n) {
-    return mS(arr, 0, n - 1);
-}
+int optimal(vector<int> arr, int n) { return mS(arr, 0, n - 1); }
 
 int main() {
     vector<int> arr = {1, 20, 6, 4, 5};

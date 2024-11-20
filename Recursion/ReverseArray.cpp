@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 void solve(int arr[], int i, int n) {
@@ -11,7 +12,7 @@ void solve(int arr[], int i, int n) {
 
 int main() {
     int arr[] = {1, 2, 3, 4, 5};
-    solve(arr, 0, size(arr));
+    solve(arr, 0, sizeof(arr) / sizeof(arr[0]));
     for (int i : arr) {
         cout << i << " ";
     }

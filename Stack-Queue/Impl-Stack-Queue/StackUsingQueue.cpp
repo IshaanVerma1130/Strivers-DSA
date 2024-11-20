@@ -1,10 +1,11 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 class Stack {
     queue<int> q;
 
-public:
+   public:
     void push(int x) {
         int size = q.size();
         q.push(x);
@@ -15,11 +16,7 @@ public:
         }
     }
 
-    void pop() {
-        q.pop();
-    }
+    void pop() { q.pop(); }
 
-    int top() {
-        return q.front();
-    }
+    int top() { return q.front(); }
 };

@@ -1,12 +1,12 @@
 
-#include <bits/stdc++.h>
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
 // Node class represents a node in a linked list
 class Node {
-public:
+   public:
     // Data stored in the node
     int data;
 

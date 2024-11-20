@@ -1,10 +1,11 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 class MinStackBrute {
     stack<pair<int, int>> st;
 
-public:
+   public:
     void push(int x) {
         if (st.empty()) {
             st.push({x, x});
@@ -13,19 +14,15 @@ public:
         }
     }
 
-    int getMin() {
-        return st.top().second;
-    }
+    int getMin() { return st.top().second; }
 
-    int top() {
-        return st.top().first;
-    }
+    int top() { return st.top().first; }
 };
 class MinStackOptimal {
     stack<int> st;
-    long long minEle = LONG_LONG_MAX;
+    long long minEle = LLONG_MAX;
 
-public:
+   public:
     void push(int x) {
         if (st.empty()) {
             minEle = x;
@@ -61,7 +58,5 @@ public:
         return x;
     }
 
-    int getMin() {
-        return minEle;
-    }
+    int getMin() { return minEle; }
 };

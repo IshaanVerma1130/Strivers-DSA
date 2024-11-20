@@ -1,7 +1,9 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
-// Better solution is using next_permutation in cpp STL which is also the one below
+// Better solution is using next_permutation in cpp STL which is also the one
+// below
 
 // from the end of the array
 // find array index i such that arr[i] < arr[i+1]
@@ -33,6 +35,4 @@ vector<int> optimal(vector<int> arr) {
     return arr;
 }
 
-int main() {
-    vector<int> arr = {2, 1, 5, 4, 3, 0, 0};
-}
+int main() { vector<int> arr = {2, 1, 5, 4, 3, 0, 0}; }

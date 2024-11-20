@@ -1,7 +1,11 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <map>
+#include <set>
+#include <vector>
 using namespace std;
 
-vector<vector<int>> brute(vector<int> arr) { // O(n^3 * log(unique triplets)) // O(2*number of triplets)
+vector<vector<int>> brute(vector<int> arr) {  // O(n^3 * log(unique triplets))
+                                              // // O(2*number of triplets)
     int n = arr.size();
     set<vector<int>> s;
 
@@ -21,7 +25,8 @@ vector<vector<int>> brute(vector<int> arr) { // O(n^3 * log(unique triplets)) //
     return ans;
 }
 
-vector<vector<int>> better(vector<int> arr) { // O(n^2 * log(unique tiplets)) // O(2*number of triplets)
+vector<vector<int>> better(vector<int> arr) {  // O(n^2 * log(unique tiplets))
+                                               // // O(2*number of triplets)
     int n = arr.size();
     set<vector<int>> s;
 
@@ -42,15 +47,14 @@ vector<vector<int>> better(vector<int> arr) { // O(n^2 * log(unique tiplets)) //
     return ans;
 }
 
-vector<vector<int>> optimal(vector<int> arr) { // O(nlongn + n*n)
+vector<vector<int>> optimal(vector<int> arr) {  // O(nlongn + n*n)
     int n = arr.size();
     vector<vector<int>> ans;
 
     sort(arr.begin(), arr.end());
 
     for (int i = 0; i < n; i++) {
-        if (i > 0 && arr[i] == arr[i - 1])
-            continue;
+        if (i > 0 && arr[i] == arr[i - 1]) continue;
         int j = i + 1;
         int k = n - 1;
 
@@ -66,10 +70,8 @@ vector<vector<int>> optimal(vector<int> arr) { // O(nlongn + n*n)
                 j++;
                 k--;
 
-                while (j < k && arr[j] == arr[j - 1])
-                    j++;
-                while (j < k && arr[k] == arr[k + 1])
-                    k--;
+                while (j < k && arr[j] == arr[j - 1]) j++;
+                while (j < k && arr[k] == arr[k + 1]) k--;
             }
         }
     }

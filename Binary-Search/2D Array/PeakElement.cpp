@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 int maxRowIndex(vector<vector<int>> mat, int col, int n) {
     int maxRow = -1;
@@ -31,5 +32,4 @@ vector<int> optimal(vector<vector<int>> mat) {
     }
     return {-1, -1};
 }
-int main() {
-}
+int main() {}

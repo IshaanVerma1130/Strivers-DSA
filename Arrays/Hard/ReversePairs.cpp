@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 int brute(vector<int> arr) {
@@ -45,8 +46,7 @@ int countPairs(vector<int> &arr, int low, int mid, int high) {
     int right = mid + 1;
 
     for (int i = low; i <= mid; i++) {
-        while (right <= high && arr[i] > 2 * arr[right])
-            right++;
+        while (right <= high && arr[i] > 2 * arr[right]) right++;
         count += right - (mid + 1);
     }
     return count;
@@ -54,8 +54,7 @@ int countPairs(vector<int> &arr, int low, int mid, int high) {
 
 int mS(vector<int> &arr, int low, int high) {
     int count = 0;
-    if (low >= high)
-        return count;
+    if (low >= high) return count;
     int mid = (low + high) / 2;
     count += mS(arr, low, mid);
     count += mS(arr, mid + 1, high);

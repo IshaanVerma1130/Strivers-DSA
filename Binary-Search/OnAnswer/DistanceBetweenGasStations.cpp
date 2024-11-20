@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 long double brute(vector<int> arr, int k) {
@@ -40,7 +41,8 @@ long double better(vector<int> arr, int k) {
         int secitonIndex = tp.second;
         howMany[secitonIndex] += 1;
         long double diff = arr[secitonIndex + 1] - arr[secitonIndex];
-        long double newSection = diff / (long double)(howMany[secitonIndex] + 1);
+        long double newSection =
+            diff / (long double)(howMany[secitonIndex] + 1);
         pq.push({newSection, secitonIndex});
     }
 

@@ -1,28 +1,23 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
-bool linearSearch(vector<int> &arr, int x)
-{
-    for (auto i : arr)
-    {
-        if (i == x)
-            return true;
+bool linearSearch(vector<int> &arr, int x) {
+    for (auto i : arr) {
+        if (i == x) return true;
     }
     return false;
 }
 
-int brute(vector<int>(&arr))
-{
+int brute(vector<int>(&arr)) {
     int longest = 1;
     int n = arr.size();
 
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++) {
         int count = 1;
         int x = arr[i];
 
-        while (linearSearch(arr, x + 1))
-        {
+        while (linearSearch(arr, x + 1)) {
             x++;
             count++;
         }
@@ -32,11 +27,9 @@ int brute(vector<int>(&arr))
     return longest;
 }
 
-int better(vector<int>(&arr))
-{
+int better(vector<int>(&arr)) {
     int n = arr.size();
-    if (n == 0)
-        return 0;
+    if (n == 0) return 0;
 
     sort(arr.begin(), arr.end());
 
@@ -44,15 +37,11 @@ int better(vector<int>(&arr))
     int count = 0;
     int longest = 1;
 
-    for (int i = 0; i < n; i++)
-    {
-        if (arr[i] - 1 == lastSmaller)
-        {
+    for (int i = 0; i < n; i++) {
+        if (arr[i] - 1 == lastSmaller) {
             count++;
             lastSmaller = arr[i];
-        }
-        else if (arr[i] != lastSmaller)
-        {
+        } else if (arr[i] != lastSmaller) {
             count = 1;
             lastSmaller = arr[i];
         }
@@ -62,29 +51,23 @@ int better(vector<int>(&arr))
     return longest;
 }
 
-int optimal(vector<int>(&arr))
-{
+int optimal(vector<int>(&arr)) {
     int n = arr.size();
-    if (n == 0)
-        return 0;
+    if (n == 0) return 0;
 
     unordered_set<int> st;
     int longest = 1;
 
-    for (auto i : arr)
-    {
+    for (auto i : arr) {
         st.insert(i);
     }
 
-    for (auto i : st)
-    {
-        if (st.find(i - 1) == st.end())
-        {
+    for (auto i : st) {
+        if (st.find(i - 1) == st.end()) {
             int count = 1;
             int x = i;
 
-            while (st.find(x + 1) != st.end())
-            {
+            while (st.find(x + 1) != st.end()) {
                 x++;
                 count++;
             }
@@ -94,8 +77,7 @@ int optimal(vector<int>(&arr))
     return longest;
 }
 
-int main()
-{
+int main() {
     vector<int> a = {100, 200, 1, 2, 3, 4};
 
     cout << "Brute:" << brute(a) << "\n";

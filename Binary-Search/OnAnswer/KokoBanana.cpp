@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 int fun(vector<int> arr, int mid) {
@@ -29,5 +30,5 @@ int optimal(vector<int> arr, int h) {
 int main() {
     vector<int> arr = {3, 6, 7, 11};
     int h = 8;
-    cout << optimal(arr, h) << endl; // 4
+    cout << optimal(arr, h) << endl;  // 4
 }

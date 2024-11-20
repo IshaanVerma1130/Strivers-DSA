@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 int priority(char c) {
@@ -20,7 +21,8 @@ string optimal(string s) {
 
     while (i < size) {
         char c = s[i];
-        if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9')) {
+        if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') ||
+            (c >= '0' && c <= '9')) {
             ans = ans + c;
         } else if (c == '(') {
             st.push(c);

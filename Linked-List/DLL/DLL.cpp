@@ -1,19 +1,20 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 class Node {
-public:
+   public:
     int data;
     Node *next;
     Node *back;
 
-public:
+   public:
     Node(int data1) {
         data = data1;
         next = nullptr;
         back = nullptr;
     }
 
-public:
+   public:
     Node(int data1, Node *back1, Node *next1) {
         data = data1;
         next = next1;
@@ -77,8 +78,7 @@ Node *removeKth(Node *head, int k) {
     Node *temp = head;
     while (temp != nullptr) {
         count++;
-        if (count == k)
-            break;
+        if (count == k) break;
         temp = temp->next;
     }
 
@@ -140,14 +140,12 @@ Node *insertBeforeTail(Node *head, int val) {
 }
 
 Node *insertBeforeKth(Node *head, int val, int k) {
-    if (k == 1)
-        return insertBeforHead(head, val);
+    if (k == 1) return insertBeforHead(head, val);
     Node *temp = head;
     int count = 0;
     while (temp != nullptr) {
         count++;
-        if (count == k)
-            break;
+        if (count == k) break;
         temp = temp->next;
     }
     Node *prev = temp->back;

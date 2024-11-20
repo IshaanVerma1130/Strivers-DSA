@@ -1,8 +1,9 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 class Node {
-public:
+   public:
     int data;
 
     Node *next;
@@ -19,10 +20,8 @@ public:
 };
 
 Node *reverse(Node *head) {
-    if (head == nullptr)
-        return nullptr;
-    if (head->next == nullptr)
-        return head;
+    if (head == nullptr) return nullptr;
+    if (head->next == nullptr) return head;
 
     Node *prev = nullptr;
     Node *current = head;
@@ -37,8 +36,7 @@ Node *reverse(Node *head) {
 }
 
 bool optimal(Node *head) {
-    if (head == nullptr || head->next == nullptr)
-        return true;
+    if (head == nullptr || head->next == nullptr) return true;
 
     Node *slow = head;
     Node *fast = head;

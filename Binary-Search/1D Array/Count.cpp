@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 int first(vector<int> arr, int target) {
@@ -45,8 +46,7 @@ int optimal(vector<int> arr, int target) {
     int firstOccurence = first(arr, target);
     int lastOccurence = last(arr, target);
 
-    if (firstOccurence == -1)
-        return 0;
+    if (firstOccurence == -1) return 0;
     return lastOccurence - firstOccurence + 1;
 }
 

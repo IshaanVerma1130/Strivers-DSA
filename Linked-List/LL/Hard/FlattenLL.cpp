@@ -1,8 +1,9 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 class Node {
-public:
+   public:
     int data;
 
     Node *next;
@@ -46,8 +47,7 @@ Node *merge(Node *list1, Node *list2) {
 }
 
 Node *optimal(Node *head) {
-    if (head->next == nullptr || head == nullptr)
-        return head;
+    if (head->next == nullptr || head == nullptr) return head;
     Node *mergedHead = optimal(head->next);
     return merge(head, mergedHead);
 }

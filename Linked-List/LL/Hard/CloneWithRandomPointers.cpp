@@ -1,8 +1,9 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 class Node {
-public:
+   public:
     int data;
 
     Node *next;
@@ -34,8 +35,7 @@ Node *brute(Node *head) {
 }
 
 Node *optimal(Node *head) {
-    if (head == nullptr)
-        return nullptr;
+    if (head == nullptr) return nullptr;
     Node *temp = head;
     while (temp != nullptr) {
         Node *newNode = new Node(temp->data);
@@ -45,7 +45,8 @@ Node *optimal(Node *head) {
     }
     temp = head;
     while (temp != nullptr) {
-        temp->next->random = (temp->random != nullptr) ? temp->random->next : nullptr;
+        temp->next->random =
+            (temp->random != nullptr) ? temp->random->next : nullptr;
         temp = temp->next->next;
     }
     Node *dummy = new Node(-1);

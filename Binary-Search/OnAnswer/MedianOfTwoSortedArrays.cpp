@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 double brute(vector<int> arr1, vector<int> arr2) {
     int n = arr1.size();
@@ -49,34 +50,26 @@ double better(vector<int> arr1, vector<int> arr2) {
 
     while (i < n && j < m) {
         if (arr1[i] < arr2[j]) {
-            if (count == el1Index)
-                el1 = arr1[i];
-            if (count == el2Index)
-                el2 = arr1[i];
+            if (count == el1Index) el1 = arr1[i];
+            if (count == el2Index) el2 = arr1[i];
             i++;
         } else {
-            if (count == el1Index)
-                el1 = arr2[j];
-            if (count == el2Index)
-                el2 = arr2[j];
+            if (count == el1Index) el1 = arr2[j];
+            if (count == el2Index) el2 = arr2[j];
             j++;
         }
         count++;
     }
 
     while (i < n) {
-        if (count == el1Index)
-            el1 = arr1[i];
-        if (count == el2Index)
-            el2 = arr1[i];
+        if (count == el1Index) el1 = arr1[i];
+        if (count == el2Index) el2 = arr1[i];
         i++;
         count++;
     }
     while (j < m) {
-        if (count == el1Index)
-            el1 = arr2[j];
-        if (count == el2Index)
-            el2 = arr2[j];
+        if (count == el1Index) el1 = arr2[j];
+        if (count == el2Index) el2 = arr2[j];
         j++;
         count++;
     }
@@ -104,14 +97,10 @@ double optimal(vector<int> arr1, vector<int> arr2) {
         int l2 = INT_MIN;
         int r1 = INT_MAX;
         int r2 = INT_MAX;
-        if (mid1 < n1)
-            r1 = arr1[mid1];
-        if (mid2 < n2)
-            r2 = arr2[mid2];
-        if (mid1 - 1 >= 0)
-            l1 = arr1[mid1 - 1];
-        if (mid2 - 1 >= 0)
-            l2 = arr2[mid2 - 1];
+        if (mid1 < n1) r1 = arr1[mid1];
+        if (mid2 < n2) r2 = arr2[mid2];
+        if (mid1 - 1 >= 0) l1 = arr1[mid1 - 1];
+        if (mid2 - 1 >= 0) l2 = arr2[mid2 - 1];
         if (l1 <= r2 && l2 <= r1) {
             if ((n1 + n2) % 2 == 0) {
                 return (max(l1, l2) + min(r1, r2)) / 2.0;

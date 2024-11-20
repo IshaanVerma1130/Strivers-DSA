@@ -1,8 +1,9 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 class Node {
-public:
+   public:
     int data;
 
     Node *next;
@@ -60,7 +61,8 @@ int main() {
     Node *loopStartNode = optimal(head);
 
     if (loopStartNode) {
-        cout << "Loop detected. Starting node of the loop is: " << loopStartNode->data << endl;
+        cout << "Loop detected. Starting node of the loop is: "
+             << loopStartNode->data << endl;
     } else {
         cout << "No loop detected in the linked list." << endl;
     }

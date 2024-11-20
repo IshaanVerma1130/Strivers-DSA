@@ -1,12 +1,11 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
-long long nCr(int n, int r)
-{
+long long nCr(int n, int r) {
     long long res = 1;
 
-    for (int i = 0; i < r; i++)
-    {
+    for (int i = 0; i < r; i++) {
         res *= n - i;
         res /= i + 1;
     }
@@ -14,43 +13,36 @@ long long nCr(int n, int r)
     return res;
 }
 
-long long valueAtRandC(int r, int c) // Formula based
+long long valueAtRandC(int r, int c)  // Formula based
 {
     return nCr(r - 1, c - 1);
 }
 
-void printRowBrute(int r)
-{
-    for (int i = 1; i <= r; i++)
-    {
+void printRowBrute(int r) {
+    for (int i = 1; i <= r; i++) {
         cout << valueAtRandC(r, i) << " ";
     }
 }
 
-void printRowOptimal(int r)
-{
+void printRowOptimal(int r) {
     long long ans = 1;
     cout << 1 << " ";
 
-    for (int i = 1; i < r; i++)
-    {
+    for (int i = 1; i < r; i++) {
         ans *= r - i;
         ans /= i;
         cout << ans << " ";
     }
 }
 
-void printTriangle(int r)
-{
-    for (int i = 1; i <= r; i++)
-    {
+void printTriangle(int r) {
+    for (int i = 1; i <= r; i++) {
         printRowOptimal(i);
         cout << endl;
     }
 }
 
-int main()
-{
+int main() {
     int r = 5;
     int c = 4;
 

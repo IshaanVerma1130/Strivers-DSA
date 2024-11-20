@@ -1,11 +1,11 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 string optimal(string s, int k) {
     stack<char> st;
 
-    if (k == s.size())
-        return "0";
+    if (k == s.size()) return "0";
 
     for (int i = 0; i < s.size(); i++) {
         while (!st.empty() && st.top() > s[i] && k > 0) {
@@ -30,7 +30,6 @@ string optimal(string s, int k) {
     }
 
     reverse(res.begin(), res.end());
-    if (res.size() == 0)
-        return "0";
+    if (res.size() == 0) return "0";
     return res;
 }
