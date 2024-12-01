@@ -35,4 +35,11 @@ vector<int> optimal(vector<int> arr) {
     return arr;
 }
 
-int main() { vector<int> arr = {2, 1, 5, 4, 3, 0, 0}; }
+int main() {
+    vector<int> arr = {1, 2, 3};
+    vector<int> res = optimal(arr);
+    for (int i = 0; i < res.size(); i++) {
+        cout << res[i] << " ";
+    }
+    return 0;
+}
