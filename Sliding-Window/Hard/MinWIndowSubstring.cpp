@@ -35,3 +35,10 @@ string optimal(string s, string t) {
     }
     return (start == -1) ? "" : s.substr(start, minLen);
 }
+
+int main() {
+    string s = "ADOBECODEBANC";
+    string t = "ABC";
+    cout << optimal(s, t) << endl;
+    return 0;
+}
