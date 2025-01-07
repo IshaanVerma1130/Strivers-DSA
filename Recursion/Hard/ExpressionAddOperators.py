@@ -25,7 +25,7 @@ def optimal(s: str, target: int):
 
             if (
                 s[index] == "0"
-            ):  # only one iteration happend when we have 0 in the beginning of the string
+            ):  # only one iteration happens when we have 0 in the beginning of the string
                 break
 
     recur(0, [], 0, 0)
