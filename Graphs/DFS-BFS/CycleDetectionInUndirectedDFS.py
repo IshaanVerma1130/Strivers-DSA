@@ -1,12 +1,12 @@
 def optimal(adj):
     vis = [0] * len(adj)
 
-    def bfs(node, parent):
+    def dfs(node, parent):
         vis[node] = 1
 
         for n in adj[node]:
             if vis[n] == 0:
-                if bfs(n, node) == True:
+                if dfs(n, node) == True:
                     return True
             elif n != parent:
                 return True
@@ -15,7 +15,7 @@ def optimal(adj):
 
     for i in range(len(adj)):
         if vis[i] == 0:
-            if bfs(i, -1) == True:
+            if dfs(i, -1) == True:
                 return True
 
     return False
