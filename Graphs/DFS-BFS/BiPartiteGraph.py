@@ -4,7 +4,7 @@ def optimal(adj):
     color = [-1 for _ in range(n)]
 
     def dfs(node, col):
-        color[i] = col
+        color[node] = col
 
         for i in adj[node]:
             if color[i] == -1:
